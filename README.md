@@ -1,2 +1,18 @@
-# clothing-website
-# Al Malka Garments and Boutique Center  Welcome to the official website of Al Malka Garments and Boutique Center, located in Malka, Pakistan.  We offer quality clothing and stylish boutique designs for kids and adults.  Contact us via phone/WhatsApp at +92 301 240009 or visit us at VX3H+XP6 نزد ہسپتال چوک, Malka.
+# Al Malka Garments & Boutique Center
+
+Welcome to the official repository for **Al Malka Garments & Boutique Center**, a clothing and boutique business based in Malka, Pakistan.  
+This website showcases our latest collections and provides contact information for customers.  
+
+## Features
+- Modern and responsive design  
+- Google Maps integration for location  
+- WhatsApp contact support  
+- Easy to customize and expand  
+
+## Contact
+📍 VX3H+XP6, Near Hospital Chowk, Malka, Pakistan  
+📞 +92 301 240009 (WhatsApp available)  
+
+## License
+© 2025 Al Malka Garments & Boutique Center. All Rights Reserved.
+
