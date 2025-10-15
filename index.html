@@ -34,35 +34,196 @@
             <img src="images/bag.jpg" alt="School Bag" width="200">
             <img src="images/kids_clothing.jpg" alt="Children's Clothing" width="200">
         </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al Malka Garments and Boutique Center</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #333;
+    }
 
-    
+    header {
+      background-color: #b30000;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
 
-    
-<section id="contact">
-  <div class="container">
-    <h2>Contact Us</h2>
-    <p>Email: contact@almalka.com</p>
-    <p>Phone/WhatsApp: <a href="https://wa.me/92301240009" target="_blank">+92 301 240009</a></p>
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #b30000;
+      border-bottom: 2px solid #b30000;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 280px;
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 2px solid #eee;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+      color: #222;
+    }
+
+    .product-card p {
+      padding: 0 10px 10px;
+      font-size: 0.9rem;
+    }
+
+    .shop-btn {
+      display: inline-block;
+      margin: 10px auto 15px;
+      padding: 10px 20px;
+      background: #b30000;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .shop-btn:hover {
+      background: #800000;
+    }
+
+    .map-container iframe {
+      border: 0;
+      width: 100%;
+      height: 400px;
+    }
+
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Al Malka Garments and Boutique Center</h1>
+    <p>Nice Clothing and Boutique Store for Children. We also offer School Bags and Uniforms at Reasonable Prices!</p>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Al Malka Garments and Boutique Center is a friendly and affordable clothing store for children. We provide high-quality school uniforms, school bags, and other clothing items at reasonable prices, ensuring both comfort and style.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+      <h2>Our Products</h2>
+      <div class="products">
+        <div class="product-card">
+          <img src="images/school_uniform.jpg" alt="School Uniform">
+          <h3>School Uniforms</h3>
+          <p>Durable and comfortable uniforms for boys and girls.</p>
+          <a href="https://wa.me/92301240009?text=I'm%20interested%20in%20School%20Uniforms" target="_blank" class="shop-btn">Order on WhatsApp</a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/bag.jpg" alt="School Bag">
+          <h3>School Bags</h3>
+          <p>Trendy and long-lasting school bags for all age groups.</p>
+          <a href="https://wa.me/92301240009?text=I'm%20interested%20in%20School%20Bags" target="_blank" class="shop-btn">Order on WhatsApp</a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/kids_clothing_clean.jpg" alt="Children's Clothing">
+          <h3>Children's Clothing</h3>
+          <p>Comfortable and stylish kidswear available for all seasons.</p>
+          <a href="https://wa.me/92301240009?text=I'm%20interested%20in%20Children's%20Clothing" target="_blank" class="shop-btn">Order on WhatsApp</a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/accessories.jpg" alt="Accessories">
+          <h3>Accessories & Cosmetics</h3>
+          <p>Essential accessories and safe cosmetics for daily use.</p>
+          <a href="https://wa.me/92301240009?text=I'm%20interested%20in%20Accessories%20and%20Cosmetics" target="_blank" class="shop-btn">Order on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: contact@almalka.com</p>
+      <p>Phone/WhatsApp: <a href="https://wa.me/92301240009" target="_blank">+92 301 240009</a></p>
       <p>Address: VX3H+XP6 نزد ہسپتال چوک, Malka, Pakistan</p>
-    <p>Visit us: Al Malka Garments & Boutique Center, Malka</p>
-</section>
+      <p>Visit us: Al Malka Garments & Boutique Center, Malka</p>
+    </section>
 
-    <!-- Google Map Embed -->
+    <!-- Map -->
     <div class="map-container">
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d352.2970008197052!2d73.97874573724162!3d32.85497283590507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391fa57254161a35%3A0xb366ae8de9f4399e!2sAl%20Malka%20Garments%20%26%20Botique%20Center%20-%20Best%20Kidswear%20in%20Malka!5e0!3m2!1sen!2sae!4v1759401374029!5m2!1sen!2sae" 
-        width="100%" 
-        height="400" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
+        allowfullscreen=""
+        loading="lazy">
       </iframe>
     </div>
-  </div>
-<!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Al Malka Garments and Boutique Center. All rights reserved.</p>
-    </footer>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Al Malka Garments and Boutique Center. All rights reserved.</p>
+  </footer>
 </body>
 </html>
+
+    
+
+    
