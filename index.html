@@ -1,193 +1,1351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Al Malka Garments and Boutique Center</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Al Malka Garments and Boutique Center offers quality school uniforms, kidswear, boutique fashion, bags, cosmetics, and more in Malka, Pakistan."
+  />
+  <meta
+    name="keywords"
+    content="Al Malka Garments, boutique in Malka, school uniforms, kids clothes, clothing store Pakistan, fashion in Malka"
+  />
+  <title>Al Malka Garments & Boutique Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
+    :root {
+      --primary: #8b1e2d;
+      --primary-dark: #741827;
+      --secondary: #1d1d1d;
+      --accent: #d7b77d;
+      --light: #f8f5f1;
+      --white: #ffffff;
+      --text: #2f2f2f;
+      --muted: #6d6d6d;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+      --container: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #fafafa;
-      color: #333;
+      font-family: "Open Sans", sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    header {
-      background-color: #b30000;
-      color: white;
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--secondary);
+      margin: 0 0 16px;
       text-align: center;
-      padding: 2rem 1rem;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+    .section-subtitle {
+      max-width: 700px;
+      margin: 0 auto 36px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 1.05rem;
     }
 
-    main {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      color: #b30000;
-      border-bottom: 2px solid #b30000;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+    .btn {
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
+      gap: 10px;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 26px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.25s ease;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 8px 18px rgba(139, 30, 45, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .btn-light:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+    }
+
+    .topbar {
+      background: var(--secondary);
+      color: #fff;
+      font-size: 0.9rem;
+      padding: 10px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .topbar small {
+      opacity: 0.9;
+    }
+
+    .topbar-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .topbar a {
+      color: #fff;
+      opacity: 0.9;
+    }
+
+    .navbar {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 82px;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      color: var(--secondary);
+      font-size: 1.05rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--secondary);
+      font-weight: 600;
+      font-size: 0.96rem;
+    }
+
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: var(--white);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      background:
+        linear-gradient(120deg, rgba(19, 19, 19, 0.72), rgba(19, 19, 19, 0.4)),
+        url("https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+    }
+
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(2.6rem, 5vw, 5rem);
+      line-height: 1.1;
+      margin: 0 0 18px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      margin: 0 0 28px;
+      color: rgba(255,255,255,0.9);
+      max-width: 620px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(140px, 1fr));
+      gap: 16px;
+      max-width: 520px;
+    }
+
+    .trust-pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 16px 14px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .trust-pill strong {
+      display: block;
+      font-size: 1.2rem;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .mini-card {
+      background: var(--white);
+      color: var(--text);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .mini-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 14px;
+    }
+
+    .mini-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+    }
+
+    .mini-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .mini-card .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .mini-card .price {
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    .features-bar {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 22px 0;
+    }
+
+    .features-inner {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(180px, 1fr));
+      gap: 18px;
+      text-align: center;
+    }
+
+    .feature-item {
+      padding: 8px 10px;
+      font-weight: 700;
+    }
+
+    .feature-item span {
+      display: block;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .collection-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      min-height: 320px;
+      box-shadow: var(--shadow);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: end;
+      padding: 24px;
+    }
+
+    .collection-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.72));
+    }
+
+    .collection-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .collection-card h3 {
+      margin: 0 0 8px;
+      color: var(--white);
+      font-size: 1.7rem;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .collection-card p {
+      margin: 0 0 18px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .collection-card .btn {
+      padding: 11px 18px;
+      font-size: 0.9rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(220px, 1fr));
+      gap: 22px;
     }
 
     .product-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      width: 280px;
-      text-align: center;
+      background: var(--white);
+      border-radius: var(--radius);
       overflow: hidden;
-      transition: transform 0.2s ease-in-out;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .product-card:hover {
-      transform: scale(1.03);
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
     }
 
     .product-card img {
       width: 100%;
-      height: 200px;
+      height: 260px;
       object-fit: cover;
-      border-bottom: 2px solid #eee;
+    }
+
+    .product-body {
+      padding: 18px 18px 20px;
+    }
+
+    .product-tag {
+      display: inline-block;
+      padding: 6px 10px;
+      background: rgba(139,30,45,0.08);
+      border-radius: 999px;
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
 
     .product-card h3 {
-      margin: 10px 0 5px;
-      color: #222;
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      color: var(--secondary);
     }
 
     .product-card p {
-      padding: 0 10px 10px;
-      font-size: 0.9rem;
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
-    .shop-btn {
-      display: inline-block;
-      margin: 10px auto 15px;
-      padding: 10px 20px;
-      background: #b30000;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
     }
 
-    .shop-btn:hover {
-      background: #800000;
+    .price {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary);
     }
 
-    .map-container iframe {
-      border: 0;
-      width: 100%;
-      height: 400px;
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--white);
+      border-radius: 30px;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      box-shadow: var(--shadow);
     }
 
-    footer {
-      background-color: #222;
-      color: #ccc;
+    .cta-box h3 {
+      margin: 0 0 8px;
+      font-size: clamp(1.7rem, 2vw, 2.4rem);
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .cta-box p {
+      margin: 0;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 500px;
+      background:
+        linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.18)),
+        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80") center/cover no-repeat;
+    }
+
+    .about-content h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.1rem;
+      margin: 0 0 18px;
+      color: var(--secondary);
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 1.02rem;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(139,30,45,0.08);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(180px, 1fr));
+      gap: 22px;
+    }
+
+    .why-card {
+      background: var(--white);
+      padding: 28px 18px 22px;
+      border-radius: var(--radius);
       text-align: center;
-      padding: 15px;
+      box-shadow: var(--shadow);
+    }
+
+    .why-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: rgba(139,30,45,0.08);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .why-card h4 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+      color: var(--secondary);
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .why-card p {
+      margin: 0;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: var(--white);
+      padding: 26px 22px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .stars {
+      color: #f5b301;
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+
+    .testimonial p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reviewer .avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--white);
+      font-weight: 800;
+      display: grid;
+      place-items: center;
       font-size: 0.9rem;
     }
 
+    .reviewer strong {
+      display: block;
+      color: var(--secondary);
+      font-size: 0.96rem;
+    }
+
+    .reviewer span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(200px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      height: 260px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.25s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+    }
+
+    .contact-box {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .contact-list .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(139,30,45,0.08);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .map-box {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 420px;
+      background: #ddd;
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      border: 0;
+    }
+
+    .footer {
+      background: var(--secondary);
+      color: rgba(255,255,255,0.8);
+      padding: 54px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 28px;
+    }
+
+    .footer-brand h3 {
+      color: var(--white);
+      font-size: 1.6rem;
+      margin: 0 0 12px;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .footer p,
+    .footer li,
+    .footer a {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 24px;
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.93rem;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #25d366;
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      box-shadow: 0 16px 30px rgba(37, 211, 102, 0.38);
+      z-index: 999;
+      transition: transform 0.2s ease;
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-4px) scale(1.04);
+    }
+
+    @media (max-width: 980px) {
+      .hero .container,
+      .about-grid,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+      }
+
+      .collections-grid,
+      .why-grid,
+      .testimonial-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        padding: 18px 16px 24px;
+        background: rgba(255,255,255,0.98);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .nav-actions .btn {
+        display: none;
+      }
+
+      .hero {
+        min-height: 620px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .trust-grid,
+      .features-inner,
+      .collections-grid,
+      .products-grid,
+      .why-grid,
+      .testimonial-grid,
+      .gallery-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Al Malka Garments and Boutique Center</h1>
-    <p>Nice Clothing and Boutique Store for Children. We also offer School Bags and Uniforms at Reasonable Prices!</p>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <small>📍 Malka, Pakistan | 🛍️ School Uniforms, Kidswear & Boutique Fashion</small>
+      <div class="topbar-links">
+        <a href="tel:+92301240009">📞 +92 301 240009</a>
+        <a href="https://wa.me/92301240009" target="_blank" rel="noreferrer">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Al Malka Garments Home">
+        <span class="brand-mark">A</span>
+        <span>Al Malka Garments</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#collections">Collections</a>
+        <a href="#products">Products</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="https://wa.me/92301240009?text=Hi%20Al%20Malka%20Garments%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noreferrer">
+          Order on WhatsApp
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
   </header>
 
-  <!-- Main Content -->
   <main>
-    <!-- About Section -->
-    <section id="about">
-      <h2>About Us</h2>
-      <p>Al Malka Garments and Boutique Center is a friendly and affordable clothing store for children. We provide high-quality school uniforms, school bags, and other clothing items at reasonable prices, ensuring both comfort and style.</p>
-    </section>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-copy">
+          <span class="eyebrow">Boutique & Schoolwear Store</span>
+          <h1>Premium fashion for your family.</h1>
+          <p>
+            Al Malka Garments & Boutique Center offers quality school uniforms,
+            kidswear, stylish boutique fashion, bags, cosmetics, and everyday essentials
+            at affordable prices in Malka, Pakistan.
+          </p>
 
-    <!-- Products Section -->
-    <section id="products">
-      <h2>Our Products</h2>
-      <div class="products">
-        <div class="product-card">
-          <img src="images/school_uniform.jpg" alt="School Uniform">
-          <h3>School Uniforms</h3>
-          <p>Durable and comfortable uniforms for boys and girls.</p>
-          <a href="https://wa.me/92301240009?text=I'm%20interested%20in%20School%20Uniforms" target="_blank" class="shop-btn">Order on WhatsApp</a>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/92301240009?text=Hi%20Al%20Malka%20Garments%2C%20I%20want%20to%20order%20a%20product." target="_blank" rel="noreferrer">
+              WhatsApp Order
+            </a>
+            <a class="btn btn-light" href="#collections">Explore Collections</a>
+          </div>
+
+          <div class="trust-grid">
+            <div class="trust-pill">
+              <strong>1000+</strong>
+              <span>Happy customers</span>
+            </div>
+            <div class="trust-pill">
+              <strong>5+</strong>
+              <span>Collections</span>
+            </div>
+            <div class="trust-pill">
+              <strong>24/7</strong>
+              <span>WhatsApp support</span>
+            </div>
+          </div>
         </div>
 
-        <div class="product-card">
-          <img src="images/bag.jpg" alt="School Bag">
-          <h3>School Bags</h3>
-          <p>Trendy and long-lasting school bags for all age groups.</p>
-          <a href="https://wa.me/92301240009?text=I'm%20interested%20in%20School%20Bags" target="_blank" class="shop-btn">Order on WhatsApp</a>
-        </div>
-
-        <div class="product-card">
-          <img src="images/kids_clothing_clean.jpg" alt="Children's Clothing">
-          <h3>Children's Clothing</h3>
-          <p>Comfortable and stylish kidswear available for all seasons.</p>
-          <a href="https://wa.me/92301240009?text=I'm%20interested%20in%20Children's%20Clothing" target="_blank" class="shop-btn">Order on WhatsApp</a>
-        </div>
-
-        <div class="product-card">
-          <img src="images/accessories.jpg" alt="Accessories">
-          <h3>Accessories & Cosmetics</h3>
-          <p>Essential accessories and safe cosmetics for daily use.</p>
-          <a href="https://wa.me/92301240009?text=I'm%20interested%20in%20Accessories%20and%20Cosmetics" target="_blank" class="shop-btn">Order on WhatsApp</a>
+        <div class="hero-card">
+          <div class="mini-card">
+            <img
+              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80"
+              alt="Fashion display"
+            />
+            <h3>New Arrivals</h3>
+            <p>Fresh kidswear, boutique styles, and school essentials ready for your family.</p>
+            <div class="meta">
+              <span>Latest collection</span>
+              <span class="price">From PKR 999</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Email: contact@almalka.com</p>
-      <p>Phone/WhatsApp: <a href="https://wa.me/92301240009" target="_blank">+92 301 240009</a></p>
-      <p>Address: VX3H+XP6 نزد ہسپتال چوک, Malka, Pakistan</p>
-      <p>Visit us: Al Malka Garments & Boutique Center, Malka</p>
+    <div class="features-bar">
+      <div class="container features-inner">
+        <div class="feature-item"><span>👕</span> School Uniforms</div>
+        <div class="feature-item"><span>🧒</span> Kidswear</div>
+        <div class="feature-item"><span>💄</span> Cosmetics</div>
+        <div class="feature-item"><span>📍</span> Local Store</div>
+      </div>
+    </div>
+
+    <section class="section" id="collections">
+      <div class="container">
+        <h2 class="section-title">Shop by Collection</h2>
+        <p class="section-subtitle">
+          Discover quality styles for every family member, from school essentials to boutique fashion.
+        </p>
+
+        <div class="collections-grid">
+          <article
+            class="collection-card"
+            style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80');"
+          >
+            <div>
+              <h3>Kidswear</h3>
+              <p>Comfortable, stylish, and affordable everyday outfits.</p>
+              <a class="btn btn-primary" href="https://wa.me/92301240009?text=Hi%20I%20am%20interested%20in%20Kidswear." target="_blank" rel="noreferrer">
+                Shop Now
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="collection-card"
+            style="background-image: url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80');"
+          >
+            <div>
+              <h3>School Uniforms</h3>
+              <p>Durable uniforms that combine comfort and smart appearance.</p>
+              <a class="btn btn-primary" href="https://wa.me/92301240009?text=Hi%20I%20am%20interested%20in%20School%20Uniforms." target="_blank" rel="noreferrer">
+                Shop Now
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="collection-card"
+            style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80');"
+          >
+            <div>
+              <h3>Boutique Fashion</h3>
+              <p>Elegant styles for special events and everyday confidence.</p>
+              <a class="btn btn-primary" href="https://wa.me/92301240009?text=Hi%20I%20am%20interested%20in%20Boutique%20Fashion." target="_blank" rel="noreferrer">
+                Shop Now
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Map -->
-    <div class="map-container">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d352.2970008197052!2d73.97874573724162!3d32.85497283590507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391fa57254161a35%3A0xb366ae8de9f4399e!2sAl%20Malka%20Garments%20%26%20Botique%20Center%20-%20Best%20Kidswear%20in%20Malka!5e0!3m2!1sen!2sae!4v1759401374029!5m2!1sen!2sae" 
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
-    </div>
+    <section class="section" id="products">
+      <div class="container">
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-subtitle">Popular items selected for quality, style, and value.</p>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80" alt="School uniform" />
+            <div class="product-body">
+              <span class="product-tag">Schoolwear</span>
+              <h3>Premium School Uniform</h3>
+              <p>Comfortable and durable fabric designed for daily school wear.</p>
+              <div class="product-footer">
+                <span class="price">PKR 1,399</span>
+                <a class="btn btn-primary" href="https://wa.me/92301240009?text=Hi%20I%20want%20to%20order%20the%20Premium%20School%20Uniform." target="_blank" rel="noreferrer">
+                  Order
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="School bag" />
+            <div class="product-body">
+              <span class="product-tag">Accessories</span>
+              <h3>School Bags</h3>
+              <p>Stylish and durable bags for school, travel, and daily use.</p>
+              <div class="product-footer">
+                <span class="price">PKR 1,999</span>
+                <a class="btn btn-primary" href="https://wa.me/92301240009?text=Hi%20I%20want%20to%20order%20a%20School%20Bag." target="_blank" rel="noreferrer">
+                  Order
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80" alt="Kids clothing" />
+            <div class="product-body">
+              <span class="product-tag">Kidswear</span>
+              <h3>Kids Fashion Set</h3>
+              <p>Trend-forward outfits made for comfort, play, and style.</p>
+              <div class="product-footer">
+                <span class="price">PKR 1,999</span>
+                <a class="btn btn-primary" href="https://wa.me/92301240009?text=Hi%20I%20want%20to%20order%20the%20Kids%20Fashion%20Set." target="_blank" rel="noreferrer">
+                  Order
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80" alt="Boutique dress" />
+            <div class="product-body">
+              <span class="product-tag">Boutique</span>
+              <h3>Elegant Boutique Dress</h3>
+              <p>Designed for special occasions with a premium boutique finish.</p>
+              <div class="product-footer">
+                <span class="price">PKR 2,499</span>
+                <a class="btn btn-primary" href="https://wa.me/92301240009?text=Hi%20I%20want%20to%20order%20the%20Elegant%20Boutique%20Dress." target="_blank" rel="noreferrer">
+                  Order
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h3>Need something custom?</h3>
+            <p>Message us directly on WhatsApp and our team will help you choose the right style.</p>
+          </div>
+          <a class="btn btn-light" href="https://wa.me/92301240009?text=Hi%20Al%20Malka%20Garments%2C%20I%20need%20help%20with%20a%20custom%20order." target="_blank" rel="noreferrer">
+            Ask for Custom Order
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-image" aria-label="Boutique clothes display"></div>
+
+        <div class="about-content">
+          <h3>About Al Malka Garments</h3>
+          <p>
+            Al Malka Garments and Boutique Center is a trusted clothing and boutique store in Malka,
+            Pakistan, serving families with quality, affordable, and stylish products.
+          </p>
+          <p>
+            From school uniforms and kidswear to boutique clothing, bags, accessories, and cosmetics,
+            we focus on comfort, style, affordability, and reliable customer service.
+          </p>
+
+          <ul class="check-list">
+            <li>Premium quality garments and boutique styles</li>
+            <li>Reasonable prices for families and students</li>
+            <li>Friendly service and easy WhatsApp ordering</li>
+            <li>Local business with trusted community support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: #fff;">
+      <div class="container">
+        <h2 class="section-title">Why Choose Us</h2>
+        <p class="section-subtitle">Your local boutique partner for style, comfort, and value.</p>
+
+        <div class="why-grid">
+          <article class="why-card">
+            <div class="why-icon">✅</div>
+            <h4>Quality Products</h4>
+            <p>Well-made clothing designed for everyday comfort and long-lasting use.</p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">💸</div>
+            <h4>Affordable Prices</h4>
+            <p>Competitive pricing for families, students, and boutique shoppers.</p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">🎒</div>
+            <h4>School Essentials</h4>
+            <p>Reliable uniforms, bags, and accessories for students of all ages.</p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">💬</div>
+            <h4>Easy Ordering</h4>
+            <p>Fast response through WhatsApp and direct local guidance from our team.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Customer Reviews</h2>
+        <p class="section-subtitle">What customers say about shopping with Al Malka Garments.</p>
+
+        <div class="testimonial-grid">
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“Very good quality uniforms and affordable prices. Staff is helpful and friendly.”</p>
+            <div class="reviewer">
+              <div class="avatar">A</div>
+              <div>
+                <strong>Ayesha</strong>
+                <span>Parent</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“I bought kidswear for my children and the quality is excellent. Highly recommended.”</p>
+            <div class="reviewer">
+              <div class="avatar">M</div>
+              <div>
+                <strong>Mahnoor</strong>
+                <span>Customer</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“The boutique collection is stylish and the store is easy to reach. Great service.”</p>
+            <div class="reviewer">
+              <div class="avatar">R</div>
+              <div>
+                <strong>Rehman</strong>
+                <span>Local shopper</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <h2 class="section-title">Our Gallery</h2>
+        <p class="section-subtitle">A look at our collections, market styles, and boutique experience.</p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80');"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Visit or Contact Us</h2>
+        <p class="section-subtitle">We’d love to help you find the perfect style for your family.</p>
+
+        <div class="contact-wrap">
+          <div class="contact-box">
+            <ul class="contact-list">
+              <li>
+                <span class="icon">📍</span>
+                <div>
+                  <strong>Address</strong><br />
+                  VX3H+XP6 نزد ہسپتال چوک, Malka, Pakistan
+                </div>
+              </li>
+              <li>
+                <span class="icon">📞</span>
+                <div>
+                  <strong>Phone / WhatsApp</strong><br />
+                  <a href="tel:+92301240009">+92 301 240009</a>
+                </div>
+              </li>
+              <li>
+                <span class="icon">✉️</span>
+                <div>
+                  <strong>Email</strong><br />
+                  <a href="mailto:contact@almalka.com">contact@almalka.com</a>
+                </div>
+              </li>
+              <li>
+                <span class="icon">🕒</span>
+                <div>
+                  <strong>Business Hours</strong><br />
+                  Monday - Saturday: 9:00 AM - 19:00 PM
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="map-box">
+            <iframe
+              src="https://www.google.com/maps?q=Malka%20Pakistan&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Map to Al Malka Garments">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Al Malka Garments and Boutique Center. All rights reserved.</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Al Malka Garments</h3>
+          <p>
+            Quality fashion, schoolwear, accessories, and boutique styles for
+            families across Malka and nearby areas.
+          </p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#products">Products</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Categories</h4>
+          <ul class="footer-links">
+            <li><a href="#">School Uniforms</a></li>
+            <li><a href="#">Kidswear</a></li>
+            <li><a href="#">Boutique Fashion</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+92301240009">+92 301 240009</a></li>
+            <li><a href="https://wa.me/92301240009" target="_blank" rel="noreferrer">WhatsApp</a></li>
+            <li><a href="#contact">Visit Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 Al Malka Garments & Boutique Center</span>
+        <span>All Rights Reserved</span>
+      </div>
+    </div>
   </footer>
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/92301240009?text=Hi%20Al%20Malka%20Garments%2C%20I%20want%20to%20order%20a%20product."
+    target="_blank"
+    rel="noreferrer"
+    aria-label="Chat on WhatsApp">
+    WhatsApp
+  </a>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+    });
+  </script>
 </body>
 </html>
-
-    
-
-    
