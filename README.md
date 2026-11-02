@@ -25,14 +25,7 @@ We are focused on **style, comfort, affordability, and durability** for all our 
 - ✅ Easy to customize and expand in the future  
 - ✅ Showcasing garments, school uniforms, bags, and cosmetics  
 
----
 
-## 📸 Screenshots
-*(You can add images of your website or products here later)*  
-Example:  
-![Website Screenshot](https://via.placeholder.com/800x400.png?text=Al+Malka+Garments+Website)  
-
----
 
 ## 📍 Location
 VX3H+XP6, Near Hospital Chowk, Malka, Pakistan  
