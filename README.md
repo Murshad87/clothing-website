@@ -34,7 +34,7 @@ VX3H+XP6, Near Hospital Chowk, Malka, Pakistan
 ---
 
 ## 📞 Contact
-- **Phone / WhatsApp:** +92 301 240009  
+- **Phone / WhatsApp:** +92 301 2440009  
  
 
 ## License
